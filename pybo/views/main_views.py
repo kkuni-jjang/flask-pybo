@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, render_template,  url_for
+from flask import Blueprint, render_template,  url_for, current_app
 from werkzeug.utils import redirect
 
 from pybo.models import Question
@@ -25,8 +25,7 @@ def detail(question_id):
 '''
 @bp.route('/')
 def index():
-    3/0  # 강제로 오류발생
-    return redirect(url_for('question._list'))
+    current_app.logger.info("INFO 레벨로 출력")
 '''
 'main'
     => Blueprint의 별칭
