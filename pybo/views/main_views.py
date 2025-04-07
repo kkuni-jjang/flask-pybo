@@ -26,6 +26,7 @@ def detail(question_id):
 @bp.route('/')
 def index():
     current_app.logger.info("INFO 레벨로 출력")
+    return redirect(url_for('question._list'))
 '''
 'main'
     => Blueprint의 별칭
